@@ -16,7 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { ChevronsUpDown } from "lucide-react";
+import { CheckIcon, ChevronsUpDown } from "lucide-react";
 interface DesignConfiguratorProps {
   configId: string;
   imageUrl: string;
@@ -158,7 +158,18 @@ const DesignConfigurator = ({
                                 model.label === options.model.label,
                             }
                           )}
+                          onClick={() => {
+                            setOptions((prev) => ({ ...prev, model }));
+                          }}
                         >
+                          <CheckIcon
+                            className={cn(
+                              "mr-2 h-4 w-4",
+                              model.label === options.model.label
+                                ? "opacity-100"
+                                : "opacity-0"
+                            )}
+                          />
                           {model.label}
                         </DropdownMenuItem>
                       ))}
