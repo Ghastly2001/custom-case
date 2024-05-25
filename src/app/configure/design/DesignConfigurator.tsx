@@ -7,7 +7,12 @@ import NextImage from "next/image";
 import { Rnd } from "react-rnd";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { useState } from "react";
-import { COLORS, MODELS } from "@/validators/option-validator";
+import {
+  COLORS,
+  FINISHES,
+  MATERIALS,
+  MODELS,
+} from "@/validators/option-validator";
 import { Label } from "@/components/ui/label";
 import { color } from "framer-motion";
 import { DropdownMenu, DropdownMenuItem } from "@/components/ui/dropdown-menu";
@@ -34,9 +39,13 @@ const DesignConfigurator = ({
   const [options, setOptions] = useState<{
     color: (typeof COLORS)[number];
     model: (typeof MODELS.options)[number];
+    material: (typeof MATERIALS.options)[number];
+    finish: (typeof FINISHES.options)[number];
   }>({
     color: COLORS[0],
     model: MODELS.options[0],
+    material: MATERIALS.options[0],
+    finish: FINISHES.options[0],
   });
 
   return (
@@ -176,6 +185,11 @@ const DesignConfigurator = ({
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>
+                {[MATERIALS, FINISHES].map(
+                  ({ name, options: selectableOptions }) => (
+                    <RadioGroup key={name} value={options[name]}></RadioGroup>
+                  )
+                )}
               </div>
             </div>
           </div>
