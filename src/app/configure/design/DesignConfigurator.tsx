@@ -156,12 +156,12 @@ const DesignConfigurator = ({
                         <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    <DropdownMenuContent className="bg-zinc-200">
                       {MODELS.options.map((model) => (
                         <DropdownMenuItem
                           key={model.label}
                           className={cn(
-                            "flex text-sm gap-1 items-center p-1.5 cursor-default hover:bg-zinc-100",
+                            "flex text-sm gap-1 items-center p-1.5 cursor-default hover:bg-primary",
                             {
                               "bg-zinc-100":
                                 model.label === options.model.label,
@@ -204,7 +204,7 @@ const DesignConfigurator = ({
                             value={option}
                             className={({ focus, checked }) =>
                               cn(
-                                "relaive block cursor-pointer rounded-lg bg-white px-6 py-4 shadow-sm border-2 border-zinc-200 focus:outline-none ring-0 focus:ring-0 outline-none sm:flex sm:justify-between",
+                                "relaive block cursor-pointer rounded-lg bg-white px-6 py-4 shadow-sm border-2 border-zinc-200 focus:outline-none ring-0 focus:ring-0 outline-none sm:flex sm:justify-between mt-4",
                                 { "border-primary": focus || checked }
                               )
                             }
