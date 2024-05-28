@@ -187,7 +187,18 @@ const DesignConfigurator = ({
                 </div>
                 {[MATERIALS, FINISHES].map(
                   ({ name, options: selectableOptions }) => (
-                    <RadioGroup key={name} value={options[name]}></RadioGroup>
+                    <RadioGroup
+                      key={name}
+                      value={options[name]}
+                      onChange={(val) => {
+                        setOptions((prev) => ({ ...prev, [name]: val }));
+                      }}
+                    >
+                      <Label>
+                        {name.slice(0, 1).toUpperCase() + name.slice(1)}
+                      </Label>
+                      <div className="mt-3 space-y-4"></div>
+                    </RadioGroup>
                   )
                 )}
               </div>
