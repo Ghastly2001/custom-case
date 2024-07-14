@@ -223,6 +223,13 @@ const DesignConfigurator = ({
                                 ) : null}
                               </span>
                             </span>
+
+                            <RadioGroup
+                              as="span"
+                              className="mt-2 flex text-sm sm:ml-4 sm:mt-0 sm:flex-col sm:text-right"
+                            >
+                              <span>${option.price}</span>
+                            </RadioGroup>
                           </Radio>
                         ))}
                       </div>
