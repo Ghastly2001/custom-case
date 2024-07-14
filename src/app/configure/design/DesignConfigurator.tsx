@@ -21,7 +21,7 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { CheckIcon, ChevronsUpDown } from "lucide-react";
+import { ArrowRight, CheckIcon, ChevronsUpDown } from "lucide-react";
 import { BASE_PRICE } from "@/config/products";
 interface DesignConfiguratorProps {
   configId: string;
@@ -252,6 +252,9 @@ const DesignConfigurator = ({
                     100
                 )}
               </p>
+              <Button size="sm" className="w-full ">
+                Continue <ArrowRight className="h-4 w-4 ml-1.5 inline" />
+              </Button>
             </div>
           </div>
         </div>
