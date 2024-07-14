@@ -1,7 +1,7 @@
 "use client";
 import HandleComponent from "@/components/HandleComponent";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { cn } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import NextImage from "next/image";
 import { Rnd } from "react-rnd";
@@ -228,7 +228,7 @@ const DesignConfigurator = ({
                               as="span"
                               className="mt-2 flex text-sm sm:ml-4 sm:mt-0 sm:flex-col sm:text-right"
                             >
-                              <span>${option.price}</span>
+                              <span>{formatPrice(option.price / 100)}</span>
                             </RadioGroup>
                           </Radio>
                         ))}
