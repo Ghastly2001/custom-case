@@ -64,6 +64,12 @@ const DesignConfigurator = ({
 
   async function saveConfiguration() {
     try {
+      const {
+        left: caseLeft,
+        top: caseTop,
+        width,
+        height,
+      } = phoneCaseRef.current!.getBoundingClientRect();
     } catch (error) {}
   }
 
