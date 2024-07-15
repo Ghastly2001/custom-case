@@ -49,6 +49,16 @@ const DesignConfigurator = ({
     finish: FINISHES.options[0],
   });
 
+  const [renderedDimenstion, setRenderedDimension] = useState({
+    width: imageDimensions.width / 4,
+    height: imageDimensions.width / 4,
+  });
+
+  const [renderPosition, setRenderPosition] = useState({
+    x: 150,
+    y: 205,
+  });
+
   return (
     <div className="relative mt-20 grid grid-cols-1 lg:grid-cols-3 mb-20 pb-20">
       <div className="relative h-[37.5rem] overflow-hidden col-span-2 w-full max-w-4xl flex items-center justify-center rounded-lg border-2 border-dashed border-gray-300 p-12 text-center focus:outline-none focus:ring-2 focus:ring-offset-2">
