@@ -90,6 +90,12 @@ const DesignConfigurator = ({
             height: imageDimensions.height / 4,
             width: imageDimensions.width / 4,
           }}
+          onResizeStop={(_, __, ref, ___, { x, y }) => {
+            setRenderedDimension({
+              height: parseInt(ref.style.height.slice(0, -2)),
+              width: parseInt(ref.style.width.slice(0, -2)),
+            });
+          }}
           lockAspectRatio
           resizeHandleComponent={{
             bottomRight: <HandleComponent />,
