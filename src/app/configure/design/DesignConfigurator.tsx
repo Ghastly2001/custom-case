@@ -70,6 +70,15 @@ const DesignConfigurator = ({
         width,
         height,
       } = phoneCaseRef.current!.getBoundingClientRect();
+
+      const { left: containerLeft, top: containerTop } =
+        containerRef.current!.getBoundingClientRect();
+
+      const leftOffset = caseLeft - containerLeft;
+      const topOffset = caseTop - containerTop;
+
+      const actualX = renderPosition.x - leftOffset;
+      const actualY = renderPosition.y - topOffset;
     } catch (error) {}
   }
 
