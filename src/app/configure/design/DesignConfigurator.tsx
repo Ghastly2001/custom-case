@@ -97,6 +97,10 @@ const DesignConfigurator = ({
             });
             setRenderPosition({ x, y });
           }}
+          onDragStop={(_, data) => {
+            const { x, y } = data;
+            setRenderPosition({ x, y });
+          }}
           lockAspectRatio
           resizeHandleComponent={{
             bottomRight: <HandleComponent />,
