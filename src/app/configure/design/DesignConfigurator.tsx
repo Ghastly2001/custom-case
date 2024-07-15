@@ -95,6 +95,7 @@ const DesignConfigurator = ({
               height: parseInt(ref.style.height.slice(0, -2)),
               width: parseInt(ref.style.width.slice(0, -2)),
             });
+            setRenderPosition({ x, y });
           }}
           lockAspectRatio
           resizeHandleComponent={{
