@@ -79,6 +79,8 @@ const DesignConfigurator = ({
 
       const actualX = renderPosition.x - leftOffset;
       const actualY = renderPosition.y - topOffset;
+
+      const canvas = document.createElement("canvas")
     } catch (error) {}
   }
 
