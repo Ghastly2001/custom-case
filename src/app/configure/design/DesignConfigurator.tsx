@@ -88,6 +88,11 @@ const DesignConfigurator = ({
 
       const userImage = new Image();
       userImage.crossOrigin = "anonymous";
+      userImage.src = imageUrl;
+
+      await new Promise((resolve) => (userImage.onload = resolve));
+
+      ctx?.drawImage(userImage, actualX, actualY);
     } catch (error) {}
   }
 
