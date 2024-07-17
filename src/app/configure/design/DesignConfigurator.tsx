@@ -80,7 +80,14 @@ const DesignConfigurator = ({
       const actualX = renderPosition.x - leftOffset;
       const actualY = renderPosition.y - topOffset;
 
-      const canvas = document.createElement("canvas")
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+
+      const ctx = canvas.getContext("2d");
+
+      const userImage = new Image();
+      userImage.crossOrigin = "anonymous";
     } catch (error) {}
   }
 
