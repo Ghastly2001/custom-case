@@ -104,6 +104,7 @@ const DesignConfigurator = ({
       const base64Data = base64.split(",")[1];
 
       const blob = base64ToBlob(base64Data, "image/png");
+      const file = new File([blob], "filename.png", { type: "image/png" });
     } catch (error) {}
   }
 
@@ -115,6 +116,7 @@ const DesignConfigurator = ({
     }
 
     const byteArray = new Uint8Array(byteNumbers);
+    return new Blob([byteArray], { type: mimeType });
   }
 
   return (
