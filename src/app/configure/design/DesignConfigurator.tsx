@@ -92,7 +92,16 @@ const DesignConfigurator = ({
 
       await new Promise((resolve) => (userImage.onload = resolve));
 
-      ctx?.drawImage(userImage, actualX, actualY);
+      ctx?.drawImage(
+        userImage,
+        actualX,
+        actualY,
+        renderedDimenstion.width,
+        renderedDimenstion.height
+      );
+
+      const base64 = canvas.toDataURL();
+      const base64Data = base64.split(",")[1];
     } catch (error) {}
   }
 
