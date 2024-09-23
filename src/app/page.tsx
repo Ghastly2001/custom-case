@@ -210,7 +210,7 @@ export default function Home() {
                   {" "}
                   your own case{" "}
                 </span>
-                now
+                now!
               </h2>
             </div>
           </div>
